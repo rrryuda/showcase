@@ -1,0 +1,46 @@
+/* scroll indicator */
+.scroll {
+    position: sticky;
+    z-index: 99;
+    display: block;
+    bottom: 0;
+
+    .top {
+        cursor: pointer;
+        position: absolute;
+        overflow: hidden;
+        display: none;
+        top: -64px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        outline: none;
+        border-radius: 50%;
+
+        svg {
+            position: absolute;
+            z-index: 1;
+            top: calc(50% - 10px);
+            left: calc(50% - 12px);
+            fill: var(--color-white);
+        }
+
+        div {
+            position: relative;
+            height: 100%;
+            background: var(--color-fg-subtle);
+            /* transition */
+            transition: all .2s ease;
+            -webkit-transition: all .2s ease;
+            -moz-transition: all .2s ease;
+            -ms-transition: all .2s ease;
+            -o-transition: all .2s ease;
+        }
+
+        &:hover {
+            div {
+                background: var(--color-fg-thin);
+            }
+        }
+    }
+}

@@ -5,11 +5,31 @@ header {
 		align-items: center;
 		justify-content: space-between;
 		height: 4rem;
-		padding: 0 1rem;
+		padding: 0 var(--side);
 
-		a {
+		.title {
 			font-size: 1rem;
+			font-weight: 700;
+			line-height: 1em;
+			letter-spacing: .2em;
 			color: var(--color-fg);
+		}
+
+		.menu {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+
+			a {
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 1em;
+				color: var(--color-fg);
+
+				&:hover {
+					opacity: .6;
+				}
+			}
 		}
 	}
 }
@@ -21,7 +41,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
-	padding: 2rem 0;
+	padding: 3rem var(--side);
 
 	span {
 		display: flex;
@@ -33,12 +53,19 @@ footer {
 
 	a {
 		font-size: 16px;
+		font-weight: 400;
+		color: var(--color-fg-muted);
+
+		&:hover {
+			opacity: .6;
+		}
 	}
 }
 
 /* main gallery */
 .gallery {
-	padding: 0 1rem;
+	padding: 0 var(--side);
+	margin-bottom: 4rem;
 
 	section {
 		display: grid;
@@ -46,14 +73,67 @@ footer {
 		gap: 1rem;
 
 		article {
-			margin-bottom: 1rem;
+			.info {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				visibility: hidden;
+				background: rgba(0, 0, 0, .6);
+				/* transition */
+				transition: all 0.2s ease;
 
-			.thumbnail {
-				margin-bottom: 1rem;
+				.title {
+					position: relative;
+					top: 1rem;
+					margin-bottom: .5rem;
+					opacity: 0;
+					visibility: hidden;
+					/* transition */
+					transition: all 0.4s ease;
+				}
+
+				.caption {
+					position: relative;
+					top: 1rem;
+					font-size: 16px;
+					line-height: 1em;
+					opacity: 0;
+					visibility: hidden;
+					color: var(--color-fg-muted);
+					/* transition */
+					transition: all 0.4s ease;
+				}
+
+				/* animation delay */
+				@for $i from 1 through 5 {
+					:nth-child(#{$i}n) {
+						transition-delay: #{$i * 0.04}s;
+					}
+				}
 			}
 
-			.title {
-				margin-bottom: 4px;
+			&:hover .info {
+				opacity: 1;
+				visibility: visible;
+
+				.title {
+					top: 0;
+					opacity: 1;
+					visibility: visible;
+				}
+
+				.caption {
+					top: 0;
+					opacity: 1;
+					visibility: visible;
+				}
 			}
 		}
 	}
@@ -66,6 +146,13 @@ footer {
 	.gallery {
 		section {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	/* footer */
+	footer {
+		a {
+			font-size: 15px;
 		}
 	}
 }
