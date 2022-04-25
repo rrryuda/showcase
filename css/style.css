@@ -5,13 +5,23 @@
 	--color-black: rgba(0, 0, 0, 1);
 	--color-overlay: rgba(0, 0, 0, .75);
 	/* color theme */
+	--color-btn: rgba(48, 48, 48, 1);
 	--color-fg: rgba(255, 255, 255, 1);
 	--color-fg-muted: rgba(255, 255, 255, .6);
 	--color-fg-subtle: rgba(255, 255, 255, .4);
 	--color-fg-thin: rgba(255, 255, 255, .2);
+	--color-fg-box: rgba(255, 255, 255, .9);
 	--color-bg: rgba(0, 0, 0, 1);
 	/* global margin */
 	--side: 4rem;
+	/* gap */
+	--gap-s: 1rem;
+	--gap-m: 2rem;
+	--gap-l: 4rem;
+	/* global width */
+	--stretch: 1280px;
+	--insert: 960px;
+	--narrow: 720px;
 }
 
 /* document */

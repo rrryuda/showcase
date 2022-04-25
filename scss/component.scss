@@ -20,7 +20,7 @@
         svg {
             position: absolute;
             z-index: 1;
-            top: calc(50% - 10px);
+            top: calc(50% - 12px);
             left: calc(50% - 12px);
             fill: var(--color-white);
         }
@@ -28,7 +28,7 @@
         div {
             position: relative;
             height: 100%;
-            background: var(--color-fg-subtle);
+            background: var(--color-btn);
             /* transition */
             transition: all .2s ease;
             -webkit-transition: all .2s ease;
@@ -39,7 +39,7 @@
 
         &:hover {
             div {
-                background: var(--color-fg-thin);
+                opacity: .6;
             }
         }
     }
