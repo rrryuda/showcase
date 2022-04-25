@@ -15,6 +15,8 @@
 	/* global margin */
 	--side: 4rem;
 	/* gap */
+	--gap-xxs: .25rem;
+	--gap-xs: .5rem;
 	--gap-s: 1rem;
 	--gap-m: 2rem;
 	--gap-l: 4rem;
@@ -113,16 +115,6 @@ body {
 	display: none !important;
 }
 
-.is-hidden {
-	visibility: hidden;
-	opacity: 0;
-}
-
-.is-shown {
-	visibility: visible;
-	opacity: 1;
-}
-
 /* preload */
 .loading * {
 	transition: none !important;
@@ -177,6 +169,15 @@ li {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 28px;
+}
+
+ul {
+	list-style: disc;
+	padding-left: 20px;
+}
+
+ul ::marker {
+	color: var(--color-fg-muted);
 }
 
 /* link */
